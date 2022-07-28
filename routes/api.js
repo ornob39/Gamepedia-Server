@@ -4,13 +4,14 @@ const mongoose = require("mongoose");
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const Post = require("../models/post");
+const { MongoClient, ServerApiVersion } = require('mongodb');
 
 //MongoDB Credentials//
 const db =
-    "mongodb+srv://ornob:BWiJ7YxlQn7THbRp@cluster0.pbofs.mongodb.net/eventsdb?retryWrites=true&w=majority";
+'mongodb+srv://ornob:pGAiv9oLmMD3yp07@cluster0.pbofs.mongodb.net/?retryWrites=true&w=majority'; 
 
 //Connection to MongoDB
-mongoose.connect(db, (err) => {
+mongoose.connect(db,{ useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
     if (err) {
         console.log(err);
     } else {
